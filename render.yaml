@@ -1,0 +1,8 @@
+services:
+  - name: ubuntu-desktop
+    env: docker
+    buildCommand: docker pull dorowu/ubuntu-desktop-lxde-vnc
+    runCommand: docker run -p 6080:80 -v /dev/shm:/dev/shm dorowu/ubuntu-desktop-lxde-vnc
+    envVars:
+      - key: RENDER_ENVIRONMENT
+        value: production
